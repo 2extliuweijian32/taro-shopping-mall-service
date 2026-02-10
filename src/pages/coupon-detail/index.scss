@@ -1,0 +1,293 @@
+// 根容器（整页滚动）
+.coupon-detail {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 20px 15px;
+  padding-top: 0;
+  box-sizing: border-box;
+  overflow: auto;
+
+  // ---------------------- 核心券卡片 ----------------------
+  .coupon-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+
+    // 卡片状态类
+    &--touse {
+      border: 2px solid #d9b378;
+      background-color: #fff;
+    }
+
+    &--used {
+      border: 2px solid #ccc;
+      background-color: #f5f5f5;
+    }
+
+    &--expired {
+      border: 2px solid #ccc;
+      background-color: #f5f5f5;
+    }
+
+    // 卡片头部（移除状态，仅保留缩略图+名称）
+    .coupon-card__header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .coupon-card__header-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    // 券缩略图
+    .coupon-card__thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    // 券名称
+    .coupon-card__name {
+      font-size: 32px;
+      color: #333;
+      font-weight: 600;
+      display: block;
+    }
+
+    // 使用条件
+    .coupon-card__condition {
+      font-size: 28px;
+      color: #666;
+      display: block;
+    }
+
+    // 分割线
+    .coupon-card__divider {
+      height: 2px;
+      background-color: #f0f0f0;
+      border-radius: 1px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    // 状态容器（移至券码上方，居中显示更美观）
+    .coupon-card__status-wrap {
+      text-align: center;
+      margin-bottom: 20px; // 与下方券码留出间距
+    }
+
+    // 状态标签（移至券码上方后的样式）
+    .coupon-card__status {
+      font-size: 28px;
+      font-weight: 500;
+      padding: 4px 16px;
+      border-radius: 8px;
+      white-space: nowrap;
+      display: inline-block; // 居中对齐必备
+
+      // 状态颜色区分
+      &--touse {
+        color: #d9b378;
+        background-color: #fff8f0;
+      }
+
+      &--used {
+        color: #999;
+        background-color: #eee;
+      }
+
+      &--expired {
+        color: #999;
+        background-color: #eee;
+      }
+    }
+
+    // 券码容器
+    .coupon-card__code {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    // 券码（核心：按状态区分颜色 + 已过期添加删除线）
+    .coupon-card__code-text {
+      font-size: 32px;
+      letter-spacing: 4px;
+      display: block;
+
+      // 待使用状态（金色，醒目）
+      &--touse {
+        color: #d9b378;
+        font-weight: 600;
+        text-decoration: none; // 无删除线
+      }
+
+      // 已使用状态（灰色，无删除线）
+      &--used {
+        color: #999;
+        text-decoration: none; // 无删除线
+      }
+
+      // 已过期状态（灰色 + 删除线，核心要求）
+      &--expired {
+        color: #999;
+        text-decoration: line-through; // 删除线核心属性
+        text-decoration-color: #ccc; // 删除线颜色优化
+        text-decoration-thickness: 2px; // 删除线粗细优化
+      }
+    }
+
+    // 有效期
+    .coupon-card__valid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+
+      .coupon-card__valid-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .coupon-card__valid-label {
+        font-size: 24px;
+        color: #333;
+        font-weight: 500;
+        display: block;
+      }
+
+      .coupon-card__valid-period {
+        font-size: 24px;
+        color: #666;
+        display: block;
+      }
+
+      .coupon-card__expire-use-time {
+        font-size: 24px;
+        color: #999;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  // ---------------------- 券详情卡片 ----------------------
+  .coupon__detail-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .coupon__detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .coupon__detail-title {
+      font-size: 32px;
+      color: #333;
+      font-weight: 600;
+      display: block;
+    }
+
+    .coupon__detail-tag {
+      font-size: 24px;
+      color: #fff;
+      background-color: #d9b378;
+      padding: 4px 12px;
+      border-radius: 8px;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .coupon__detail-content {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .coupon__detail-label {
+      font-size: 28px;
+      color: #333;
+      font-weight: 500;
+      display: block;
+    }
+
+    .coupon__detail-value {
+      font-size: 28px;
+      color: #666;
+      line-height: 1.6;
+      display: block;
+    }
+  }
+
+  // ---------------------- 使用规则列表 ----------------------
+  .coupon__rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .coupon__rule-item {
+    width: 100%;
+
+    .coupon__rule-text {
+      font-size: 28px;
+      color: #666;
+      line-height: 1.6;
+      display: block;
+    }
+  }
+
+  // ---------------------- 注意事项卡片 ----------------------
+  .coupon__note-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .coupon__note-title {
+      font-size: 32px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .coupon__note-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .coupon__note-item {
+      .coupon__note-text {
+        font-size: 28px;
+        color: #666;
+        line-height: 1.6;
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+// 页面整体样式
+.self-integration {
+  min-height: 100vh;
+  background: #e8f4ff;
+  box-sizing: border-box;
+  padding-top: 20px;
+
+  // 头部信息区
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 0 15px 20px;
+    border-radius: 12px;
+    background-color: #fff;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #f5f5f5;
+      overflow: hidden;
+      background-size: cover;
+    }
+
+    &-name {
+      font-size: 32px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    &-points {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      cursor: pointer;
+    }
+
+    &-points-num {
+      font-size: 40px;
+      color: #1677ff;
+    }
+
+    &-points-text {
+      font-size: 28px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+  }
+
+  // 核心内容区
+  &__content {
+    padding: 0 15px;
+  }
+
+  &__section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    &-tip {
+      font-size: 24px;
+      color: #727272;
+    }
+  }
+
+  // 四要素布局（重点优化：更精致、间距更合理、视觉更协调）
+  &__factors {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__factor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__factor-icon {
+    width: 90px; // 增大图标容器
+    height: 90px;
+    border-radius: 50%;
+    background-color: #f0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+
+  &__factor-text {
+    position: relative;
+    margin-top: -20px;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    // 核心：蓝色底色渐变 + 白色字体
+    background: linear-gradient(to right, #40a9ff, #1677ff); // 与主按钮一致的蓝色渐变
+    color: #ffffff; // 白色字体，确保覆盖其他样式
+    padding: 12px; // 内边距，让渐变背景更舒展
+    border-radius: 12px; // 圆角，与整体风格统一
+    white-space: nowrap; // 防止文字换行撑破渐变背景
+    box-shadow: 0 2px 4px rgba(22, 119, 255, 0.2); // 轻微阴影，提升层次感
+  }
+
+  // 拍摄方式布局（适配文案换行，保持美观）
+  &__shooting {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px 0;
+  }
+
+  &__shooting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__shooting-img {
+    width: 240px;
+    height: 360px;
+    background-size: cover;
+  }
+
+  &__shooting-check {
+    margin-top: 20px;
+  }
+
+  &__shooting-text {
+    margin-top: 14px;
+    font-size: 26px;
+    color: #666;
+    text-align: center; // 关键：文字居中，适配换行
+    line-height: 1.2; // 优化行高，换行后更美观
+    white-space: pre-line; // 支持\n换行，保持文案格式
+  }
+
+  // 支持票类布局
+  &__ticket-types {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+  }
+
+  &__ticket-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__ticket-text {
+    font-size: 28px;
+    color: #666;
+  }
+
+  // 主按钮区
+  &__btn-section {
+    padding: 0 15px 30px;
+  }
+
+  &__main-btn {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right, #40a9ff, #1677ff);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &-icon {
+
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  // 底部导航
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    &-text {
+      font-size: 24px;
+      color: #666;
+    }
+
+    &-divider {
+      color: #e8e8e8;
+      font-size: 32px;
+    }
+  }
+}

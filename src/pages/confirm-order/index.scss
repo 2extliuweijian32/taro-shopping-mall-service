@@ -1,0 +1,118 @@
+// 块：确认订单整体容器
+.confirm-order {
+  min-height: 100vh;
+  background-color: #fff;
+  padding-bottom: 240px;
+
+  // 元素：订单头部
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  // 元素：头部图片
+  &__header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+  }
+
+  // 元素：头部信息容器
+  &__header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+
+  // 元素：商品标题
+  &__title {
+    font-size: 32px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  // 元素：商品单价
+  &__price {
+    font-size: 36px;
+    color: #ff9900;
+    font-weight: 600;
+  }
+
+  // 元素：内容区块
+  &__section {
+    padding: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  // 修饰符：垂直布局的区块
+  &__section--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  // 元素：区块标题
+  &__section-title {
+    font-size: 32px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  // 元素：数量容器
+  &__count-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  // 元素：数量输入框
+  &__input-number {
+    // 继承原有内联样式，无需额外样式
+  }
+
+  // 元素：提示文字
+  &__tips {
+    font-size: 24px;
+    color: #999;
+  }
+
+  // 元素：总价文字
+  &__total-price {
+    font-size: 36px;
+    color: #ff9900;
+    font-weight: 600;
+  }
+
+  // 元素：留言文本框
+  &__message-textarea {
+  }
+
+  // 元素：提交按钮容器
+  &__submit-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(90deg, #ffd099, #ff9900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+  }
+
+  // 元素：提交按钮文字
+  &__submit-text {
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+  }
+}
