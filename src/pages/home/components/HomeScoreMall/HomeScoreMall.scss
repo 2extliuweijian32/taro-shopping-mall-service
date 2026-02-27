@@ -1,0 +1,30 @@
+// 块：home-score-mall（唯一类名保证样式隔离）
+.home-score-mall {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 60px; // 预留底部tabBar高度
+
+  // 元素：标题
+  &__title {
+    font-size: 36px;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  // 元素：积分商品列表容器（Flex 容器）
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  // 元素：积分商品项容器（Flex 子项，两列布局）
+  &__item {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,50 @@
+// 块：home-func（唯一类名保证样式隔离）
+.home-func {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 10px;
+
+  // 元素：功能列表（Flex 容器，实现横向布局）
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // 元素：功能项（Flex 子项，固定宽度保证 5 列分布）
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  // 元素：功能图标容器（保持原有圆形、背景色样式）
+  &__icon {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #fef2f2;
+    border-radius: 50%; // 圆形容器
+    overflow: hidden; // 防止图片溢出容器
+  }
+
+  // 新增：功能图标图片（适配容器大小，居中显示）
+  &__icon-img {
+    width: 40px; // 略小于容器，留出内边距视觉更美观
+    height: 40px;
+    display: block;
+  }
+
+  // 元素：功能文字
+  &__text {
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+  }
+}

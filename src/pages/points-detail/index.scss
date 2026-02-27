@@ -1,0 +1,204 @@
+// 所有字体大小放大一倍，同时微调间距保证布局美观
+.points-detail {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 30px 0 0; // 顶部内边距同步放大，保持比例
+  box-sizing: border-box;
+
+  // 总积分区
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #FFF8E1, #FFEDD5);
+    border-radius: 24px; // 圆角同步放大，保持比例
+    padding: 40px 30px; // 内边距同步放大，保持比例
+    margin: 0 30px 30px; // 外边距同步放大，保持比例
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::after {
+      content: '★';
+      color: rgba(252, 211, 77, 0.3);
+      font-size: 120px; // 字体放大一倍（60px → 120px）
+      position: absolute;
+      top: 50%;
+      right: 40px; // 位置同步微调，保持比例
+      transform: translateY(-50%) rotate(15deg);
+      z-index: -1;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px; // 间距同步放大，保持比例
+    }
+
+    &-label {
+      font-size: 28px; // 字体放大一倍（14px → 28px）
+      color: #92400E;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-num-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 16px; // 间距同步放大，保持比例
+    }
+
+    &-num {
+      font-size: 72px; // 字体放大一倍（36px → 72px）
+      font-weight: 700;
+      color: #F59E0B;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-unit {
+      font-size: 32px; // 字体放大一倍（16px → 32px）
+      color: #F59E0B;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 24px; // 间距同步放大，保持比例
+    }
+
+    &-img {
+      width: 200px; // 图片宽度同步放大，保持比例
+      height: 140px; // 图片高度同步放大，保持比例
+      border-radius: 16px; // 圆角同步放大，保持比例
+      background-color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+      padding: 0;
+    }
+
+    &-contact {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      font-size: 28px; // 字体放大一倍（14px → 28px）
+      color: #92400E;
+      cursor: pointer;
+      padding: 8px 16px; // 内边距同步放大，保持比例
+      border-radius: 8px; // 圆角同步放大，保持比例
+      margin: 0;
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
+  // 积分列表区
+  &__list {
+    padding: 0 30px; // 内边距同步放大，保持比例
+    margin: 0;
+
+    &-title {
+      font-size: 32px; // 字体放大一倍（16px → 32px）
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 24px; // 间距同步放大，保持比例
+      padding: 0;
+    }
+
+    // 列表项
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 20px; // 圆角同步放大，保持比例
+      padding: 32px 30px; // 内边距同步放大，保持比例
+      margin-bottom: 20px; // 间距同步放大，保持比例
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); // 阴影同步微调，保持比例
+      box-sizing: border-box;
+
+      // 列表项左侧
+      &-left {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; // 间距同步放大，保持比例
+        flex: 1;
+        margin: 0;
+        padding: 0;
+      }
+
+      // 列表项左侧 - 标题
+      &-title {
+        font-size: 32px; // 字体放大一倍（16px → 32px）
+        color: #333;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+      }
+
+      // 列表项左侧 - 时间
+      &-time {
+        font-size: 24px; // 字体放大一倍（12px → 24px）
+        color: #999999;
+        margin: 0;
+        padding: 0;
+      }
+
+      // 列表项右侧
+      &-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px; // 间距同步放大，保持比例
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+      }
+
+      // 列表项右侧 - 积分数字
+      &-point {
+        font-size: 36px; // 字体放大一倍（18px → 36px）
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+      }
+
+      // 积分增加 - 绿色
+      &-point--add {
+        color: #10B981;
+      }
+
+      // 积分扣减 - 红色
+      &-point--reduce {
+        color: #EF4444;
+      }
+
+      // 列表项右侧 - 描述
+      &-desc {
+        font-size: 24px; // 字体放大一倍（12px → 24px）
+        color: #999999;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    // 无更多数据提示
+    &-empty {
+      text-align: center;
+      padding: 60px 0; // 内边距同步放大，保持比例
+      margin-top: 20px; // 间距同步放大，保持比例
+      box-sizing: border-box;
+    }
+
+    &-empty-text {
+      font-size: 28px; // 字体放大一倍（14px → 28px）
+      color: #999999;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

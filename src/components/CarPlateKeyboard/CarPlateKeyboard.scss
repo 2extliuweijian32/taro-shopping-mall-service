@@ -1,0 +1,236 @@
+// 自定义车牌键盘组件样式（第四行整合地区/删除 + 禁用I/O + 按键高度70）
+.car-plate-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #f0f0f0;
+  padding: 30px 12px 60px;
+  box-sizing: border-box;
+  width: 100%;
+
+  &--hidden {
+    display: none;
+  }
+
+  // 键盘头部
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__reset {
+
+  }
+
+  &__reset:active {
+    opacity: 0.8;
+  }
+
+  &__reset-text {
+    font-size: 28px;
+    color: #999;
+  }
+
+  &__complete {
+
+  }
+
+  &__complete:active {
+    opacity: 0.8;
+  }
+
+  &__complete-text {
+    font-size: 28px;
+    color: #999;
+  }
+
+  // 省份面板
+  &__province {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // 省份前3行（每行10个）
+  &__province-row--normal {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  // 省份第4行（6省 + ABC左 + 删除右）
+  &__province-row--fourth {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  // 省份项（高度统一70）
+  &__province-item {
+    flex: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    max-width: calc(10% - 7px);
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__province-item:active {
+    opacity: 0.8;
+    background-color: #f0f0f0;
+  }
+
+  &__province-text {
+    font-size: 32px;
+    color: #333;
+  }
+
+  // 省份面板功能按钮（高度统一70）
+  &__province-btn {
+    flex: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e9e9e9;
+    max-width: calc(15% - 7px);
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__province-btn:active {
+    opacity: 0.8;
+    background-color: #dcdcdc;
+  }
+
+  &__province-btn-text {
+    font-size: 28px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  &__province-btn--left.abc {
+
+  }
+
+  // 字母数字面板（真实键盘布局）
+  &__char {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // 字母行（统一样式）
+  &__char-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  // 第1行（数字1-0）：10个元素，均匀分布
+  &__char-row--1 {
+    justify-content: space-between;
+  }
+
+  // 第2行（Q-P）：10个元素，均匀分布
+  &__char-row--2 {
+    justify-content: space-between;
+  }
+
+  // 第3行（A-L）：9个元素，居中对齐
+  &__char-row--3 {
+    justify-content: center;
+  }
+
+  // 第4行（Z-M + 地区 + 删除）：居中对齐，适配新增按钮
+  &__char-row--4 {
+    justify-content: center;
+    align-items: center;
+  }
+
+  // 字符项（高度统一70，禁用样式）
+  &__char-item {
+    flex: none;
+    width: 60px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  &__char-item:active {
+    opacity: 0.8;
+    background-color: #f0f0f0;
+  }
+
+  // 禁用字符样式（置灰+不可点击）
+  &__char-item--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+    border-color: #e9e9e9;
+  }
+
+  &__char-item--disabled:active {
+    opacity: 0.5;
+    background-color: #f9f9f9;
+    pointer-events: none; // 阻止点击事件触发
+  }
+
+  &__char-text {
+    font-size: 32px;
+    color: #333;
+  }
+
+  // 第四行功能按钮（地区/删除，高度统一70）
+  &__char-btn {
+    flex: none;
+    width: 80px; // 略宽于字符项，方便点击
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e9e9e9;
+  }
+
+  &__char-btn:active {
+    opacity: 0.8;
+    background-color: #dcdcdc;
+  }
+
+  &__char-btn-text {
+    font-size: 28px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  &__char-btn--area {
+
+  }
+}

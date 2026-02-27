@@ -1,0 +1,29 @@
+// 块：home-goods-tab（唯一类名保证样式隔离）
+.home-goods-tab {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  box-sizing: border-box;
+
+  &__tabs {
+    margin-bottom: 15px;
+  }
+
+  // 元素：商品列表容器（Flex 容器，逻辑不变）
+  &__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .nut-tabpane {
+    padding: 20px 0 0;
+  }
+}

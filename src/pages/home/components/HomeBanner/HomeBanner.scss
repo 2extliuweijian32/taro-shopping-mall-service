@@ -1,0 +1,14 @@
+// 块：home-banner（唯一类名保证样式隔离）
+.home-banner {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+
+  // 元素：Banner 图片
+  &__img {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    display: block;
+  }
+}

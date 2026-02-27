@@ -1,0 +1,277 @@
+.gift-detail {
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+
+  // 滚动容器
+  &__scroll {
+    padding-bottom: 160px;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  // Banner区域
+  &__banner {
+    width: 100%;
+    padding-top: 75%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  // 倒计时样式
+  &__countdown {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  // 倒计时文字
+  &__countdown-text {
+    font-size: 24px;
+  }
+
+  // 倒计时天数
+  &__countdown-day {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  // 已售出
+  &__sales {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 28px;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+
+  // 头部标题区
+  &__header {
+    padding: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // 头部标题
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  // 分享按钮容器
+  &__share {
+
+  }
+
+  // 分享文字
+  &__share-text {
+    font-size: 28px;
+    color: #666;
+  }
+
+  // 内容区块
+  &__section {
+    padding: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  // 区块标题
+  &__section-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  // 兑换物品卡片（核心优化）
+  &__item-card {
+    width: calc(100% - 20px); // 右侧留白20px
+    max-width: 700px; // 缩小整体尺寸
+    display: flex;
+    align-items: center;
+    gap: 16px; // 缩小内部间距
+    padding: 16px; // 缩小内边距
+    background-color: #ffffff; // 背景改为白色
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // 添加阴影
+    margin-right: 20px; // 右侧留白
+  }
+
+  // 物品图片容器（缩小尺寸）
+  &__item-img {
+    width: 120px; // 从160px缩小到120px
+    height: 120px; // 从160px缩小到120px
+    background-color: #f5f5f5;
+    border-radius: 12px; // 适配缩小后的尺寸
+    background-image: url("https://placeholder.pics/svg/120x120/FFFFFF-E6E6E6/维达抽纸");
+    background-size: cover;
+    background-position: center;
+  }
+
+  // 物品信息容器
+  &__item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; // 缩小内部间距
+  }
+
+  // 物品标题
+  &__item-title {
+    font-size: 30px; // 从32px微调缩小
+    color: #333;
+    font-weight: 500;
+  }
+
+  // 物品描述
+  &__item-desc {
+    font-size: 26px; // 从28px微调缩小
+    color: #999;
+    line-height: 1.5;
+  }
+
+  // 数量容器（缩小尺寸）
+  &__item-count-wrap {
+    width: 70px; // 从80px缩小到70px
+    height: 70px; // 从80px缩小到70px
+    border-radius: 50%;
+    background-color: #ff9900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // 数量文字（适配缩小尺寸）
+  &__item-count {
+    font-size: 28px; // 从32px缩小到28px
+    color: #fff;
+    font-weight: 600;
+  }
+
+  // 详情列表
+  &__detail-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // 详情标签
+  &__detail-label {
+    font-size: 32px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  // 详情值
+  &__detail-value {
+    font-size: 28px;
+    color: #666;
+    line-height: 1.6;
+
+    // 高亮修饰符
+    &--highlight {
+      background-color: #fff8f0;
+      color: #ff9900;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  }
+
+  // 规则列表
+  &__rule-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // 规则项
+  &__rule-item {
+    font-size: 28px;
+    color: #666;
+    line-height: 1.6;
+
+    // 高亮修饰符
+    &--highlight {
+      background-color: #fff8f0;
+      color: #ff9900;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  }
+
+  // 底部固定栏
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background-color: #fff;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 99;
+  }
+
+  // 积分文字
+  &__points {
+    font-size: 32px;
+    color: #ff9900;
+    font-weight: 600;
+  }
+
+  // 兑换按钮
+  &__exchange-btn {
+    width: 240px;
+    height: 80px;
+    background: linear-gradient(90deg, #ffd099, #ff9900);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 40px;
+
+    // 禁用修饰符
+    &--disabled {
+      background: #cccccc;
+      background-image: none;
+      color: #999;
+    }
+  }
+
+  // 兑换按钮文字
+  &__exchange-text {
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+  }
+}

@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
@@ -8,7 +9,14 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'webpack5'> = {
     projectName: 'taro-shopping-mall-service',
     date: '2026-2-2',
-    designWidth: 750,
+    designWidth(input) {
+      // 配置 NutUI 375 尺寸
+      if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
+        return 375
+      }
+      // 全局使用 Taro 默认的 750 尺寸
+      return 750
+    },
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
@@ -18,7 +26,8 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
     sourceRoot: 'src',
     outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist',
     plugins: [
-      "@tarojs/plugin-generator"
+      "@tarojs/plugin-generator",
+      "@tarojs/plugin-html"
     ],
     defineConstants: {
     },
@@ -29,7 +38,17 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       }
     },
     framework: 'react',
-    compiler: 'webpack5',
+    compiler: {
+      type: 'webpack5',
+      prebundle: {
+        exclude: ['@nutui/nutui-react-taro', '@nutui/icons-react-taro'],
+      }
+    },
+    alias: {
+      '@/components': path.resolve(__dirname, '..', 'src/components'),
+      '@/mock': path.resolve(__dirname, '..', 'src/mock'),
+      '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    },
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
@@ -37,9 +56,8 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       postcss: {
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          // 包含 `nut-` 的类名选择器中的 px 单位不会被解析
+          config: { selectorBlackList: ['nut-'] }
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -48,6 +66,9 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
             generateScopedName: '[name]__[local]___[hash:base64:5]'
           }
         }
+      },
+      miniCssExtractPluginOption: {
+        ignoreOrder: true
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
@@ -89,6 +110,9 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
+    },
+    sass: {
+      data: '@use "@nutui/nutui-react-taro/dist/styles/variables.scss" as *;'
     }
   }
 
