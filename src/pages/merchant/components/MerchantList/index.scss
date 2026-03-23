@@ -1,0 +1,44 @@
+.merchant-list {
+  height: calc(100vh - 140px);
+  padding: 16px;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .merchant-item {
+      width: 25%;
+      box-sizing: border-box;
+    }
+  }
+
+  &__loading {
+    padding: 20px;
+    text-align: center;
+
+    &-text {
+      font-size: 22px;
+      color: #999;
+    }
+  }
+
+  &__nomore {
+    padding: 20px;
+    text-align: center;
+
+    &-text {
+      font-size: 22px;
+      color: #999;
+    }
+  }
+
+  &__empty {
+    padding: 100px 0;
+    text-align: center;
+
+    &-text {
+      font-size: 24px;
+      color: #999;
+    }
+  }
+}

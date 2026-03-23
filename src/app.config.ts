@@ -11,7 +11,8 @@ export default defineAppConfig({
     'pages/confirm-order/index',
     'pages/gift-detail/index',
     'pages/gift-confirm-order/index',
-    'pages/user-center/index'
+    'pages/user-center/index',
+    'pages/merchant/index'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -27,12 +28,12 @@ export default defineAppConfig({
         iconPath: './assets/tabs/home.png',
         selectedIconPath: './assets/tabs/home_active.png',
       },
-      // {
-      //   pagePath: 'pages/category/index',
-      //   text: '分类',
-      //   iconPath: './assets/tabs/category.png',
-      //   selectedIconPath: './assets/tabs/category_active.png',
-      // },
+      {
+        pagePath: 'pages/merchant/index',
+        text: '品牌',
+        iconPath: './assets/tabs/category.png',
+        selectedIconPath: './assets/tabs/category_active.png',
+      },
       // {
       //   pagePath: 'pages/cart/index',
       //   text: '购物车',
