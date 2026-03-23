@@ -10,7 +10,8 @@ export default defineAppConfig({
     'pages/group-buy-list/index',
     'pages/confirm-order/index',
     'pages/gift-detail/index',
-    'pages/gift-confirm-order/index'
+    'pages/gift-confirm-order/index',
+    'pages/user-center/index'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -38,12 +39,12 @@ export default defineAppConfig({
       //   iconPath: './assets/tabs/cart.png',
       //   selectedIconPath: './assets/tabs/cart_active.png',
       // },
-      // {
-      //   pagePath: 'pages/user/userInfo/index',
-      //   text: '我的',
-      //   iconPath: './assets/tabs/user.png',
-      //   selectedIconPath: './assets/tabs/user_active.png',
-      // },
+      {
+        pagePath: 'pages/user-center/index',
+        text: '个人中心',
+        iconPath: './assets/tabs/user.png',
+        selectedIconPath: './assets/tabs/user_active.png',
+      },
     ],
     color: '#999',
     selectedColor: '#e80e27',

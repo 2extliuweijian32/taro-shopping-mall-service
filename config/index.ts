@@ -24,7 +24,7 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       828: 1.81 / 2
     },
     sourceRoot: 'src',
-    outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist',
+    outputRoot: process.env.TARO_ENV === 'ascf' ? '/Users/ext.wuguorui1/Projects/taro-demos/taro-demo-13/ascf-project/ascf/ascf_src' : 'dist',
     plugins: [
       "@tarojs/plugin-generator",
       "@tarojs/plugin-html"
