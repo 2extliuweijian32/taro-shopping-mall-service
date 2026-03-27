@@ -1,0 +1,173 @@
+.user-center {
+  padding: 20px 16px;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+// 用户信息区 - 核心容器
+.user-center__user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+// 头像
+.user-center__avatar {
+  margin-right: 12px;
+}
+
+.user-center__avatar-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+// 用户名区域
+.user-center__user-name {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.user-center__name-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 8px;
+}
+
+.user-center__level-tag {
+  font-size: 20px;
+  color: #FFB800;
+  background-color: #FFF8E0;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+// 积分区域（核心优化：换行居中+边距）
+.user-center__points {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 100px;
+}
+
+.user-center__points-item {
+  text-align: center;
+  padding: 8px 12px; // 预留合适边距
+}
+
+.user-center__points-num {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FF9900;
+  display: block;    // 强制换行
+  margin-bottom: 4px;// 数字与文字间距
+}
+
+.user-center__points-desc {
+  font-size: 20px;
+  color: #999;
+  display: block;    // 强制换行
+}
+
+// 会员卡区域（核心优化：会员码按钮圆弧+缩小+左右布局）
+.user-center__card {
+  margin-bottom: 30px;
+}
+
+.user-center__card-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.user-center__card-bg {
+  margin-bottom: 12px;
+}
+
+.user-center__card-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.user-center__card-info {
+  display: flex;
+  justify-content: space-between; // 左右布局
+  align-items: center;
+
+}
+
+.user-center__card-no {
+  font-size: 24px;
+  color: #666;
+}
+
+// 会员码按钮优化：圆弧+缩小尺寸
+.user-center__card-btn {
+  border: 1px solid #E5E5E5;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  border-radius: 24px; // 圆弧效果
+  padding: 0 12px;   // 缩小内边距
+}
+
+// 功能模块通用样式
+.user-center__module {
+  margin-bottom: 30px;
+}
+
+.user-center__module-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  display: block;
+}
+
+// 菜单通用样式
+.user-center__menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-center__menu--5col .user-center__menu-item {
+  width: 20%;
+}
+
+.user-center__menu--3col .user-center__menu-item {
+  width: 33.333%;
+}
+
+.user-center__menu--4col .user-center__menu-item {
+  width: 25%;
+}
+
+.user-center__menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-center__menu-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #F5F0E8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #B88A58;
+  margin-bottom: 8px;
+}
+
+.user-center__menu-text {
+  font-size: 22px;
+  color: #666;
+}

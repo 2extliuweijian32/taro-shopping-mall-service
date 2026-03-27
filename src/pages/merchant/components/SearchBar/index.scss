@@ -1,0 +1,13 @@
+.search-bar {
+  padding: 16px;
+
+  &__input {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    font-size: 24px;
+    color: #333;
+  }
+}
